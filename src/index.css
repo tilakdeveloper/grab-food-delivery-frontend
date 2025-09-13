@@ -296,9 +296,11 @@ nav {
 }
 
 .register-input-food {
-    display: block;
-    width: 100%;
-    padding: 0.8rem 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    padding: 0.8rem 0.2rem;
     font-size: 1.1rem;
     border-radius: 0.5rem;
     border: 2px solid #ddd;
@@ -317,7 +319,7 @@ nav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 0.2rem;
     font-size: 1.2rem;
     font-weight: 700;
     border-radius: 0.5rem;

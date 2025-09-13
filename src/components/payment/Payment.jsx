@@ -7,7 +7,7 @@ import { useError } from '../common/ErrorDisplay';
 
 
 // Load Stripe with publishable key
-const stripeInstance = loadStripe(import.meta.env.REACT_APP_STRIPE_PUBLIC_KEY);
+const stripeInstance = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 
 const PaymentForm = ({ amount, orderId, onSuccess }) => {
