@@ -60,7 +60,7 @@ const MenuDetailsPage = () => {
                 quantity: quantity
             });
 
-            if (response.statusCode === 200) {
+            if (response.statusCode === 201) {
                 setCartSuccess(true);
                 setTimeout(() => setCartSuccess(false), 4000); // Hide success message after 3 seconds
             } else {

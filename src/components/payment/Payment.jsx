@@ -17,6 +17,12 @@ const PaymentForm = ({ amount, orderId, onSuccess }) => {
 
     const [loading, setLoading] = useState(false);
     const { ErrorDisplay, showError } = useError();
+    const [cardComplete, setCardComplete] = useState(false);
+
+      const handleCardChange = (event) => {
+        // event.complete is true when all card details are valid
+        setCardComplete(event.complete);
+    };
 
     const handleSubmit = async (event) => {
 
@@ -102,10 +108,10 @@ const PaymentForm = ({ amount, orderId, onSuccess }) => {
 
             <ErrorDisplay/>
             <div className="form-group">
-                <CardElement/>
+                <CardElement onChange={handleCardChange}/>
             </div>
 
-            <button type="submit" disabled={!stripe || loading } className="pay-button">
+            <button type="submit" disabled={!stripe || loading || !cardComplete } className="stripe-pay-button" >
                 {loading ? 'Processing...' : `Pay ₹${amount}`}
             </button>
         </form>

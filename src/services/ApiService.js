@@ -124,17 +124,6 @@ export default class ApiService {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     //ORDER SECTION
 
     static async placeOrder() {

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import './index.css'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
@@ -31,6 +32,8 @@ import AdminUserRegistration from "./components/auth/AdminUserRegistration";
 function App() {
 
   return (
+    <div className = "app-container">
+
       <BrowserRouter>
       <Navbar />
       <div className="content">
@@ -109,9 +112,7 @@ function App() {
       </div>
       <Footer />
     </BrowserRouter>
-    // <>
-    // <h1>Hai</h1>
-    // </>
+     </div>
   )
 }
 

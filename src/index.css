@@ -7,6 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.content {
+  flex: 1; /* This pushes the footer down */
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -75,15 +86,6 @@ nav {
 
 
 
-
-
-
-
-
-
-
-
-
 /** FOOTER STYLING*/
 /* ./css/footer.css */
 
@@ -92,7 +94,7 @@ nav {
     color: white;
     padding: 20px 0;
     text-align: center;
-    margin-top: 20px;
+    margin-top: auto;
 }
 
 .footer-content {
@@ -2072,7 +2074,7 @@ nav {
     border-radius: 4px;
   }
   
-  .pay-button {
+  .stripe-pay-button {
     background: #6772e5;
     color: white;
     border: none;
@@ -2084,11 +2086,11 @@ nav {
     transition: all 0.2s ease;
   }
   
-  .pay-button:hover {
+  .stripe-pay-button:hover {
     background: #5469d4;
   }
   
-  .pay-button:disabled {
+  .stripe-pay-button:disabled {
     background: #aab7c4;
     cursor: not-allowed;
   }
@@ -2296,8 +2298,7 @@ nav {
   }
   
   .order-header {
-    /* background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); */
-    background: #ff9a9e;
+    background: #c0b007;
     padding: 1.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -2352,6 +2353,7 @@ nav {
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #f5f5f5;
+    margin: 0;
   }
   
   .order-item {
@@ -2360,6 +2362,13 @@ nav {
     align-items: center;
     padding: 1rem 0;
     border-bottom: 1px solid #f0f0f0;
+  }
+
+  .order-items-header {
+    display: flex;
+    justify-content: space-between; /* pushes them apart */
+    align-items: center; /* vertically centers them */
+    margin-bottom: 10px;
   }
   
   .order-item:last-child {
@@ -2404,6 +2413,13 @@ nav {
     object-fit: cover;
     transition: transform 0.3s ease;
   }
+
+  .admin-order-item-image {
+    width: 20%;
+    height: 20%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
   
   .order-item:hover .item-image {
     transform: scale(1.05);
@@ -2421,6 +2437,22 @@ nav {
     font-size: 1.2rem;
     color: #666;
   }
+
+  .price-cell {
+  min-width: 100px; /* Adjust as needed */
+  text-align: center;
+}
+
+.qty-cell {
+  min-width: 60px;
+  text-align: center;
+}
+
+.subtotal-cell {
+  min-width: 120px;
+  text-align: center;
+}
+
   
   .alert {
     background: #fff3f3;
@@ -2460,6 +2492,38 @@ nav {
     color: #666;
   }
   
+/* Pay button */
+  .pay-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 16%;
+  margin-right: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.pay-button:hover {
+  background-color: #45a049;
+  transform: scale(1.03);
+}
+
+.pay-button:active {
+  transform: scale(0.98);
+}
+
+.pay-button-animated {
+  animation: gradient-slide 2s linear infinite;
+}
+
+@keyframes gradient-slide {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
   
   @media (max-width: 768px) {
     .order-header {

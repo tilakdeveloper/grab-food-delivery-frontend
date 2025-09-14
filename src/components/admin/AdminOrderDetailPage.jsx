@@ -129,17 +129,16 @@ const AdminOrderDetailPage = () => {
                                             <img
                                                 src={item.menu.imageUrl}
                                                 alt={item.menu.name}
-                                                className="item-image"
+                                                className="admin-order-item-image"
                                             />
                                             <div>
                                                 <div className="item-name">{item.menu.name}</div>
-                                                <div className="item-description">{item.menu.description}</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td>₹ {item.pricePerUnit.toFixed(2)}</td>
-                                    <td>{item.quantity}</td>
-                                    <td>₹ {item.subtotal.toFixed(2)}</td>
+                                    <td className="price-cell">₹ {item.pricePerUnit.toFixed(2)}</td>
+                                    <td className="qty-cell">{item.quantity}</td>
+                                    <td className="subtotal-cell">₹ {item.subtotal.toFixed(2)}</td>
                                 </tr>
                             ))}
                         </tbody>

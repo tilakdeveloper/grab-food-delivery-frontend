@@ -87,6 +87,11 @@ const OrderHistoryPage = () => {
         );
     }
 
+    const handlePay = (order) => {
+        const queryString = `?orderid=${order.id}&amount=${order.totalAmount}`;
+        navigate(`/pay${queryString}`);    
+    }
+
 
     return (
         <div className="order-history-container">
@@ -109,7 +114,10 @@ const OrderHistoryPage = () => {
                             </span>
                         </div>
                         <div className="order-items">
-                            <h2 className="order-items-title">Order Items:</h2>
+                            <div className="order-items-header">
+                                <h2 className="order-items-title">Order Items:</h2>
+                                {order.orderStatus === "INITIALIZED" && <button className="pay-button pay-button-animated" onClick={() => handlePay(order)}>Pay</button>}
+                            </div>
                             {order.orderItems.map((item) => (
                                 <div key={item.id} className="order-item">
                                     <div className="item-details">
