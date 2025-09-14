@@ -9,6 +9,7 @@ const HomePage = () => {
     const [categories, setCategories] = useState([]);
     const navigate = useNavigate();
     const { ErrorDisplay, showError } = useError();
+    const [visible, setVisible] = useState(true);
 
     useEffect(() => {
 
@@ -39,6 +40,15 @@ const HomePage = () => {
         <div className="home-page">
 
             <ErrorDisplay />
+
+            {visible && <div className="info-banner">
+                <span className="info-icon">⏳</span>
+                <span>
+                    This backend is hosted on Render and may take a minute to start when idle.  
+                    The first request might be a bit slower — thanks for your patience!
+                </span>
+                <button className="close-btn" onClick={() => setVisible(false)}>✖</button>
+            </div>}
 
             <header className="home-hero-section">
                 <div className="home-hero-content">
